@@ -93,7 +93,7 @@ input {
 
 .hero> :nth-child(3) {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size:  clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     font-weight: 400;
     text-align: center;
     margin-bottom: 20px;
@@ -256,7 +256,7 @@ body {
     z-index: 20;
     transition: 0.3s;
 
-    opacity: 0;               
+    opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
     z-index: 10;
@@ -276,31 +276,37 @@ body {
 .next:hover {
     background: rgba(255, 255, 255, .2);
 }
+
 .slider:hover .prev,
-.slider:hover .next{
+.slider:hover .next {
     opacity: 1;
     visibility: visible;
 }
-.reasons{
+
+.reasons {
     max-width: 80vw;
     margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.reasons h2{
+.reason-card {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.reasons h2 {
     color: white;
     font-size: 32px;
     margin-bottom: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.reason-container{
-    display: flex;
-    gap: 18px;
-}
 
-.reason-card{
+.reason-card {
     position: relative;
-    width: 280px;
     height: 300px;
     padding: 24px;
     flex: 1;
@@ -308,47 +314,50 @@ body {
     border-radius: 18px;
     padding: 25px;
     overflow: hidden;
-    background: linear-gradient(180deg,#1d2147,#251222);
+    background: linear-gradient(180deg, #1d2147, #251222);
 }
 
-.reason-card h3{
+.reason-card h3 {
     color: white;
     font-size: 25px;
     margin-bottom: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.reason-card span{
+.reason-card span {
     color: #b8b8b8;
     font-size: 18px;
     line-height: 1.5;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.icon{
-    position:absolute;
-    right:20px;
-    bottom:20px;
-    font-size:55px;
+
+.icon {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 55px;
 }
-.reason-card img{
+
+.reason-card img {
     width: 80px;
     position: absolute;
     right: 20px;
     bottom: 20px;
 }
-.faq{
+
+.faq {
     color: white;
     max-width: 80vw;
     margin: 60px auto;
 }
 
-.faq h2{
+.faq h2 {
     font-size: 32px;
     margin-bottom: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.faqbox{
+.faqbox {
     background-color: #2d2d2d;
     padding: 20px;
     margin: 6px 0;
@@ -361,10 +370,11 @@ body {
     transition: all 0.3s ease;
 }
 
-.faqbox:hover{
+.faqbox:hover {
     background-color: #414141;
 }
-.answer{
+
+.answer {
     background: #2d2d2d;
     color: white;
     padding: 0 28px;
@@ -372,11 +382,13 @@ body {
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
-.answer.open{
+
+.answer.open {
     max-height: 500px;
     padding: 20px 24px;
 }
-.ready{
+
+.ready {
     width: 80vw;
     margin: 50px auto;
     text-align: center;
@@ -384,85 +396,123 @@ body {
     padding: 30px;
 }
 
-.ready span{
+.ready span {
     font-size: 18px;
     margin-bottom: 20px;
-    
+
 }
-footer{
+
+footer {
     width: 80vw;
     margin: 70px auto;
     color: #b3b3b3;
 }
 
-.footer{
+.footer {
     margin: 30px 0;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 }
 
-.footer a{
+.footer a {
     color: #b3b3b3;
     font-size: 14px;
 }
 
-.country{
+.country {
     margin-top: 30px;
 }
-@media (max-width:768px){
 
-    .hero-buttons{
+@media (max-width:768px) {
+
+    .hero-buttons {
         flex-direction: column;
-        width:100%;
-        align-items:center;
+        width: 100%;
+        align-items: center;
     }
 
-    .hero-buttons input{
-        width:90%;
+    .hero-buttons input {
+        width: 90%;
     }
 
-    .hero-buttons button{
-        width:90%;
+    .hero-buttons button {
+        width: 90%;
     }
 }
-@media(max-width:768px){
 
-.cards{
-    gap:20px;
-}
+@media(max-width:768px) {
 
-.card img{
-    width:140px;
-}
+    .cards {
+        gap: 20px;
+    }
 
-.card span{
-    font-size:80px;
-}
+    .card img {
+        width: 140px;
+    }
 
-}
-@media(max-width:768px){
-
-.faqbox{
-    font-size:18px;
-    padding:20px;
-}
-
-.faqbox span:last-child{
-    font-size:38px;
-}
+    .card span {
+        font-size: 80px;
+    }
 
 }
-@media(max-width:768px){
 
-.footer{
-    grid-template-columns:repeat(2,1fr);
-}
+@media(max-width:768px) {
+
+    .faqbox {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .faqbox span:last-child {
+        font-size: 38px;
+    }
 
 }
-input:focus{
-    outline:2px solid white;
+
+@media(max-width:768px) {
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
-html{
-    scroll-behavior:smooth;
+
+input:focus {
+    outline: 2px solid white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1024px) {
+    .reasons {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .reasons {
+        grid-template-columns: 1fr;
+        max-width: 95vw;
+    }
+
+    .reason-card {
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .reason-card h3 {
+        font-size: 32px;
+    }
+
+    .reason-card span {
+        font-size: 20px;
+    }
+
+    .reason-card img {
+        width: 70px;
+    }
 }
